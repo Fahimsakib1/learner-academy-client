@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <RouterProvider router ={routes}></RouterProvider>
       <ToastContainer
           position="top-center"
