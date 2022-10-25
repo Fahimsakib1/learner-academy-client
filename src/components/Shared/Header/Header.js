@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { FaUserAlt } from 'react-icons/fa';
 import Logo from '../../../images/logo/Logo.PNG'
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
+import ThemeMode from '../ThemeMode/ThemeMode';
 
 
 const Header = () => {
@@ -41,7 +42,8 @@ const Header = () => {
                     <NavLink to='/courses'>Courses</NavLink>
                     <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to='/faq'>FAQ</NavLink>
                     <NavLink to='/blog'>Blog</NavLink>
-                    <NavLink to='/aboutUs'>About Us</NavLink>
+                    <NavLink to='/register'>Register</NavLink>
+                    
 
 
 
