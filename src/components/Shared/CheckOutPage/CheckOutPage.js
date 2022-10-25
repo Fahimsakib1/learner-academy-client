@@ -1,11 +1,17 @@
 import React from 'react';
 import { Button, Table } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 import './CheckOutPage.css';
+import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 
+
+
+
 const CheckOutPage = () => {
+    const navigate = useNavigate()
+    
     const checkOutCourse = useLoaderData();
     console.log(checkOutCourse);
 
@@ -19,7 +25,12 @@ const CheckOutPage = () => {
             `Congratulations! You have successfully enrolled the course ${course_name}`,
             'success'
         )
+        navigate('/courses');
+        toast.success("You Can Choose Multiple Course From Here");
     }
+
+
+
 
     return (
         <div className='container w-75 mx-auto mt-5 checkout-bg rounded-3'>
@@ -49,7 +60,7 @@ const CheckOutPage = () => {
             </Table>
 
             <div className='text-center'>
-                <Button onClick={handleConfirmCheckout} className='ms-3 mt-2 fw-bold mb-3' variant="success">Confirm Checkout</Button>
+                <Button onClick={handleConfirmCheckout} className='ms-3 mt-2 fw-bold mb-3 confirm-checkout-button' variant="success">Confirm Checkout</Button>
             </div>
 
         </div>

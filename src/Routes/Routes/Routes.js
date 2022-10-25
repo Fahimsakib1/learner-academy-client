@@ -9,6 +9,7 @@ import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
 import ThemeMode from "../../components/Shared/ThemeMode/ThemeMode";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -45,7 +46,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 loader: ({params}) => fetch(`https://learner-academy-server-side.vercel.app/courseDetails/${params.id}`),
-                element: <CheckOutPage></CheckOutPage>
+                element: <PrivateRoute><CheckOutPage></CheckOutPage></PrivateRoute>
             },
 
             {

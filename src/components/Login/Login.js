@@ -13,7 +13,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     
-    const {userLogin, googleLogin, githubLogin} = useContext(AuthContext);
+    const {userLogin, googleLogin, githubLogin, setLoading} = useContext(AuthContext);
 
     const [visible, setVisible] = useState(false);
     const passwordFieldType = visible ? "text" : "password";
@@ -36,6 +36,7 @@ const Login = () => {
         userLogin(email, password)
         .then(result => {
             const user = result.user;
+            console.log("User From Login Page", user)
             setError('')
             event.target.reset();
             toast.success("Congratulations! Login Successful");
@@ -52,7 +53,10 @@ const Login = () => {
             })
             successLogin(false);
         })
+        .finally(() => setLoading(false))
     }
+
+
 
     const handleGoogleLogin = () => {
         googleLogin(providerGoogle)

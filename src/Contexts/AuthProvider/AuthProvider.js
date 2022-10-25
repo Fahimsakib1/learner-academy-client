@@ -9,7 +9,7 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -47,15 +47,22 @@ const AuthProvider = ({children}) => {
 
     useEffect( () => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            
+            // if (currentUser === null) {
+            //     setUser(currentUser);
+            //     console.log("Inside Auth State Changed User", currentUser);
+            // }
+
             setUser(currentUser);
             console.log("Inside Auth State Changed User", currentUser);
+            setLoading(false)
         })
 
         return () => unsubscribe();
     }, [])
 
 
-    const AuthInfo = {user,loading, setLoading,setUser, createUser, userLogin, handleSignOut, googleLogin, githubLogin, updateUserProfile};
+    const AuthInfo = {user, loading, setLoading, setUser, createUser, userLogin, handleSignOut, googleLogin, githubLogin, updateUserProfile};
     
     return (
         <AuthContext.Provider value = {AuthInfo}>

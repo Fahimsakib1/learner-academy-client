@@ -1,3 +1,16 @@
 .checkout-bg{
     background-image: linear-gradient(to right,  rgb(67, 4, 4), rgb(44, 4, 124));
 }
+
+@media only screen and (max-width: 400px){
+    .confirm-checkout-button{
+        font-size: 13px !important;
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 401px){
+    .confirm-checkout-button{
+        padding: 5px 35px !important;
+    }
+}

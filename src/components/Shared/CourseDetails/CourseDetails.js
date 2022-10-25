@@ -46,7 +46,8 @@ const CourseDetails = () => {
                         </Image>
                     </div>
                     <Card.Img variant="top" src={course_image} className='my-2 card-image-new rounded-3' />
-                    <Card.Text>
+
+                    <div>
                         <div>
                             <p className=''><span className='fw-bold'>Description:</span> <span className=''>{course_description}</span></p>
                         </div>
@@ -56,14 +57,17 @@ const CourseDetails = () => {
                                 <FaClock></FaClock>
                                 <p className="card-text ms-2"><span className='fw-bold'>Duration:</span> {duration}</p>
                             </div>
+
                             <div className='d-flex align-items-center students-div px-4 py-2  rounded-2 mb-2'>
                                 <FaUserAlt></FaUserAlt>
                                 <p className="card-text ms-2"><span className='fw-bold'>Students: </span>{students}</p>
                             </div>
+
                             <div className='d-flex align-items-center rating-div px-4 py-2  rounded-2 mb-2'>
                                 <p className='mb-0'><span className='fw-bold'>Ratings:</span> {rating.number}</p>
                                 <FaStar className='text-warning me-2 ms-2'></FaStar>
                             </div>
+                            
                         </div>
 
                         <div className='mx-auto container w-75 mb-3'>
@@ -96,7 +100,8 @@ const CourseDetails = () => {
                                 </tbody>
                             </Table>
                         </div>
-                    </Card.Text>
+                    </div>
+
                     <Card.Footer as="h4" className="text-center text-white border border-2 border-dark course-card-footer rounded-3">Course Fee : {course_fee}</Card.Footer>
 
                     <div className='text-center'>
@@ -104,6 +109,7 @@ const CourseDetails = () => {
                             <Button className='ms-3 mt-2 fw-bold' variant="warning"><FaCrown className='me-2'></FaCrown>Get Premium Access</Button>
                         </Link>
                     </div>
+
                 </Card.Body>
 
             </Card>
