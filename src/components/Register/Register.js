@@ -30,7 +30,7 @@ const Register = () => {
     }
     
     return (
-        <div className='home-parent-div row row-cols-1 row-cols-lg-2  px-5 container g-col-4 mx-auto mt-4 mb-5'>
+        <div className='home-parent-div row row-cols-1 row-cols-lg-2  mx-auto mt-4 mb-3'>
         <div className='image-div my-auto'>
             <img className='img-fluid login-image' src={login} alt="" />
         </div>
@@ -42,12 +42,12 @@ const Register = () => {
                 <Form  className='only-form'>
 
                     <Form.Group className="mb-1" controlId="formBasicName">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>FullName</Form.Label>
                         <div className='name-field-main-div'>
                             <div>
                                 <Form.Control
                                     className='name-input-field'
-                                    type="text" placeholder="Enter Name" name="name" required />
+                                    type="text" placeholder="Enter Full Name" name="name" required />
                             </div>
                             <div className='envelope-icon-div'>
                                 <FontAwesomeIcon className='envelope-icon' icon={faUser}></FontAwesomeIcon>
@@ -68,13 +68,13 @@ const Register = () => {
                         </div>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-1" controlId="formBasicEmail">
                         <Form.Label>Enter Photo URL</Form.Label>
                         <Form.Control name="photoURL" type="text" placeholder="Photo URL" />
                     </Form.Group>
 
 
-                    <Form.Group className=" mb-3 password-react-parent-div mt-2" controlId="formBasicPassword">
+                    <Form.Group className=" mb-1 password-react-parent-div mt-1" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
 
                         <div className=''>
@@ -112,7 +112,7 @@ const Register = () => {
                     </Form.Group>
 
 
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Group className="mb-1" controlId="formBasicCheckbox">
                         <Form.Check
                             onClick={handleAccepted}
                             type="checkbox"
