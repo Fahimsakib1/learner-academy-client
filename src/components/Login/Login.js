@@ -74,18 +74,18 @@ const Login = () => {
                     </div>
                 </div>
 
-                {/* <div className='google-github-facebook-button-container text-center mt-3'>
+                <div className='google-github-facebook-button-container text-center mt-3'>
                     <div className='google-button-container rounded-4 mb-3'>
-                        <button onClick={handleGoogleSignIn} className='google-button border border-0 btn btn-primary-google w-75'>Google Sign in <Link className='m-1 ms-3' title="Google" target="_blank" role="button"><FaGoogle className='fs-4 google-icon-form'></FaGoogle></Link>
+                        <button  className='google-button border border-0 btn btn-primary-google w-75'>Google Sign in <Link className='m-1 ms-3' title="Google" target="_blank" role="button"><FaGoogle className='fs-4 google-icon-form'></FaGoogle></Link>
                         </button>
                     </div>
 
                     <div className='github-button-container  rounded-4 mb-3 '>
-                        <button onClick={handleGithubSignin} className='github-button border border-0 btn btn-primary-github w-75'>Github Sign in <Link className='m-1 ms-2' title="GitHub" target="_blank" role="button"><FaGithub className='fs-3 github-icon-form  fw-bold'></FaGithub></Link>
+                        <button className='github-button border border-0 btn btn-primary-github w-75'>Github Sign in <Link className='m-1 ms-2' title="GitHub" target="_blank" role="button"><FaGithub className='fs-3 github-icon-form  fw-bold'></FaGithub></Link>
                         </button>
                     </div>
 
-                </div> */}
+                </div>
 
 
             </div>

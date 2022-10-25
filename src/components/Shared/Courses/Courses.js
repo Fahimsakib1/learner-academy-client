@@ -24,7 +24,7 @@ const Courses = () => {
                         courses.map(course => <div className=''>
 
                             <ListGroup className='mt-3 course-links px-5' key={course.id}>
-                                <Link to={`/courses/${course.id}`}><ListGroup.Item className='text-primary course-name-list'>{course.name}</ListGroup.Item></Link>
+                                <Link to={`/courseDetails/${course.id}`}><ListGroup.Item className='text-primary course-name-list'>{course.name}</ListGroup.Item></Link>
                             </ListGroup>
 
                         </div>)
