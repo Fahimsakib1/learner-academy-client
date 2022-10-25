@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
 import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,21 +7,53 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
     
+    const {userLogin} = useContext(AuthContext);
+
     const [visible, setVisible] = useState(false);
     const passwordFieldType = visible ? "text" : "password";
     const [error, setError] = useState('');
     const [successLogin, setSuccessLogin] = useState(false);
+
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(email, password);
+        userLogin(email, password)
+        .then(result => {
+            const user = result.user;
+            setError('')
+            event.target.reset();
+            toast.success("Congratulations! Login Successful");
+        })
+
+        .catch(error => {
+            console.error(error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Login Failed'
+            })
+            successLogin(false);
+        })
+    }
+    
+    
     
     return (
         <div>
             <div className='mx-auto my-5 login-container'>
                 <h4 style={{ color: "goldenrod" }} className='mt-3 text-center'>Please Login</h4>
 
-                <form className='login-form-container'>
+                <form 
+                onSubmit={handleLogin}
+                className='login-form-container'>
 
                     <div className="">
                         <label htmlFor="formGroupExampleInput" className="form-label">Email</label>

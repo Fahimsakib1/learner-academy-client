@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Register.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,10 +10,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import login from '../../images/Login.jpg';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 
 
 const Register = () => {
+    
+    const {createUser} = useContext(AuthContext);
     
     const [success, setSuccess] = useState(false);
     const [visible, setVisible] = useState(false);
@@ -28,6 +31,59 @@ const Register = () => {
     const handleAccepted = (event) => {
         setAccepted(event.target.checked)
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setPasswordError('');
+        setConfirmPasswordError('');
+        setSuccess(false);
+
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const photo = event.target.photoURL.value;
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirmPassword.value;
+
+        console.log(name, email, photo, password, confirmPassword);
+
+        if (password.length < 6) {
+            setPasswordError('Password must be more than 6 characters');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            setConfirmPasswordError('Password is not matching');
+            return;
+        }
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            setPasswordError('');
+            setSuccess(true);
+            event.target.reset();
+            Swal.fire(
+                'Great',
+                `${name} You are Successfully Registered`,
+                'success'
+            )
+        })
+
+        .catch(error => {
+            console.error(error);
+            setPasswordError(error.message);
+            setSuccess(false);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Registration Failed'
+            })
+        })
+    }
+
+
+
     
     return (
         <div className='home-parent-div row row-cols-1 row-cols-lg-2  px-5 container g-col-4 mx-auto mt-4 mb-5'>
@@ -39,7 +95,7 @@ const Register = () => {
             <div className=' form-div mt-4 mx-auto registration-form-container px-4'>
                 <h4 style={{ color: "goldenrod" }} className='mt-3 text-center'>New User? Please Register</h4>
 
-                <Form  className='only-form'>
+                <Form onSubmit={handleSubmit}  className='only-form'>
 
                     <Form.Group className="mb-1" controlId="formBasicName">
                         <Form.Label>FullName</Form.Label>
