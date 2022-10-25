@@ -6,7 +6,7 @@ import { faEye, faEyeSlash, faEnvelope } from '@fortawesome/free-solid-svg-icons
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
@@ -19,8 +19,13 @@ const Login = () => {
     const passwordFieldType = visible ? "text" : "password";
     const [error, setError] = useState('');
     const [successLogin, setSuccessLogin] = useState(false);
+    
     const providerGoogle = new GoogleAuthProvider();
     const providerGithub = new GithubAuthProvider();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
 
     const handleLogin = (event) => {
@@ -34,6 +39,8 @@ const Login = () => {
             setError('')
             event.target.reset();
             toast.success("Congratulations! Login Successful");
+            setSuccessLogin(true);
+            navigate(from, { replace: true })
         })
 
         .catch(error => {
@@ -68,6 +75,7 @@ const Login = () => {
         })
     }
 
+
     const handleGithubLogin = () => {
         githubLogin(providerGithub)
         .then(result => {
@@ -79,7 +87,7 @@ const Login = () => {
                 'success'
                 )
         })
-        
+
         .catch(error => {
             console.error(error);
             Swal.fire({
