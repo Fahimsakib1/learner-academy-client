@@ -4,6 +4,7 @@ import Home from "../../components/Home/Home";
 import Layout from "../../components/Layout/Layout";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
+import CheckOutPage from "../../components/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
@@ -39,6 +40,12 @@ export const routes = createBrowserRouter([
                 path: '/courseDetails/:id',
                 loader: ({params}) => fetch(`https://learner-academy-server-side.vercel.app/courseDetails/${params.id}`),
                 element: <CourseDetails></CourseDetails>
+            },
+
+            {
+                path: '/checkout/:id',
+                loader: ({params}) => fetch(`https://learner-academy-server-side.vercel.app/courseDetails/${params.id}`),
+                element: <CheckOutPage></CheckOutPage>
             },
 
             {

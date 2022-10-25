@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import { FaEye, } from "react-icons/fa";
-import { FaClock, FaUserAlt, FaStar, FaArrowDown } from "react-icons/fa";
+import { FaClock, FaUserAlt, FaStar, FaArrowDown, FaCrown } from "react-icons/fa";
 import './CourseDetails.css';
 import Table from 'react-bootstrap/Table';
 
@@ -98,7 +98,14 @@ const CourseDetails = () => {
                         </div>
                     </Card.Text>
                     <Card.Footer as="h4" className="text-center text-white border border-2 border-dark course-card-footer rounded-3">Course Fee : {course_fee}</Card.Footer>
+
+                    <div className='text-center'>
+                        <Link to={`/checkout/${course_id}`}>
+                            <Button className='ms-3 mt-2 fw-bold' variant="warning"><FaCrown className='me-2'></FaCrown>Get Premium Access</Button>
+                        </Link>
+                    </div>
                 </Card.Body>
+
             </Card>
 
         </div>
