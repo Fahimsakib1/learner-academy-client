@@ -13,7 +13,7 @@ const Footer = () => {
                 {/* <!-- Grid container --> */}
 
 
-                <div className="container p-4 pb-0 col col-sm-12 col-lg-12 col-md-12 col-12 ">
+                <div className="p-4 pb-0 col col-sm-12 col-lg-12 col-md-12 col-12 ">
 
                     <div className="">
                         <div className="d-flex justify-content-center">
@@ -21,8 +21,8 @@ const Footer = () => {
                             <h3 className="text-warning">Learner Academy</h3>
                         </div>
                         <p className="text-muted">Dhaka, Bangladesh</p>
-                        <p className="text-muted text-center footer-email">Email: traveldude@gmail.com</p>
-                        <p className="text-muted text-center forter-mobile">Mobile: 01234567890</p>
+                        <p className="text-muted text-center footer-email">Email: learneracademy@gmail.com</p>
+                        <p className="text-muted text-center forter-mobile">Mobile: 01122334455</p>
                         <p>Privacy Policy || <a className="footer-terms-and-condition" href="/">Terms Of Use</a></p>
                     </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
 
                 <div className="text-center p-3 last-div" >
                     <span style={{ fontSize: "16px" }}>© 2022 Copyright || Developed By -</span>
-                    <Link className="text-warning my-name"> Fahim Faysal Sakib</Link>
+                    <Link className="text-warning my-name"> Fahim Faysal</Link>
                 </div>
 
             </footer>

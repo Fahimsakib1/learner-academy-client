@@ -10,11 +10,10 @@ const Layout = () => {
     return (
         <div>
             <Header></Header>
-            <Container>
+            {/* <Container>
                 <Row>
                     <Col lg="3" className='d-none d-lg-block'>
                         <LeftSideNav></LeftSideNav>
-                        
                     </Col>
 
                     <Col lg="9">
@@ -22,7 +21,8 @@ const Layout = () => {
                     </Col>
 
                 </Row>
-            </Container>
+            </Container> */}
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );

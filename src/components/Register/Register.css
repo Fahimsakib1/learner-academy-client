@@ -82,7 +82,7 @@
     color: rgb(252, 249, 249) !important;
 }
 .btn-primary-github:hover .github-icon-form{
-    color: white;
+    color: white !important;
 }
 
 .btn-primary-facebook{
@@ -97,8 +97,8 @@
 }
 
 .github-icon-form{
-    color: black ;
-    font-weight: bold;
+    color: black !important;
+    font-weight: bold !important;
 }
 
 .github-icon-form:hover{
@@ -115,8 +115,8 @@
 }
 
 .google-icon-form{
-    color: black;
-    font-size: 8px ;
+    color: black !important;
+    font-size: 8px !important;
 }
 
 
@@ -176,7 +176,4 @@
     
 }
 
-@media only screen and (min-width: 1000px){
-   
-}
 

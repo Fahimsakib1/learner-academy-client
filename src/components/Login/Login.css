@@ -72,34 +72,34 @@
 
 
 @media only screen and (min-width: 701px) and (max-width: 1200px) {
-    /* .login-container{
+    .login-container{
         width: 60% !important;
-    } */
+    }
 }
 
 
 
 
 @media only screen and (max-width: 700px) {
-    /* .login-container{
+    .login-container{
         width: 95% !important;
-    } */
-}
-
-@media only screen and (min-width: 1201px){
-    /* .login-container{
-        width: 100% !important;
-    } */
-}
-
-@media only screen and (max-width: 1500px){
-    .reset-password-parent-div{
-        margin-top: -20px;
     }
 }
 
-@media only screen and (min-width: 1501px){
+@media only screen and (min-width: 1201px){
+    .login-container{
+        width: 50% !important;
+    }
+}
+
+@media only screen  and (max-width: 1500px){
     .reset-password-parent-div{
-        margin-top: 7px;
+        margin-top: -10px;
+    }
+}
+
+@media only screen  and (min-width: 1501px){
+    .reset-password-parent-div{
+        margin-top: 6px;
     }
 }

@@ -69,7 +69,7 @@ const Login = () => {
 
                 <div className='d-flex justify-content-between login-lower-container px-3'>
                     <p className='register-title-link me-2'>New to this website? <Link to='/register'> Register</Link></p>
-                    <div className='d-flex justify-content-evenly reset-password-parent-div'>
+                    <div className='d-flex justify-content-between reset-password-parent-div'>
                         <p className='my-2'>Forget Password? <button type="button" className="btn btn-link reset-password-link-button">Reset Password</button></p>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ const Register = () => {
     }
     
     return (
-        <div className='home-parent-div row row-cols-1 row-cols-lg-2  mx-auto mt-4 mb-3'>
+        <div className='home-parent-div row row-cols-1 row-cols-lg-2  px-5 container g-col-4 mx-auto mt-4 mb-5'>
         <div className='image-div my-auto'>
             <img className='img-fluid login-image' src={login} alt="" />
         </div>

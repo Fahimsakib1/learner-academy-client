@@ -111,9 +111,9 @@ const Header = () => {
                     } */}
                     </div>
                 </Nav>
-                <div className='d-lg-none d-block'>
+                {/* <div className='d-lg-none d-block'>
                     <LeftSideNav></LeftSideNav>
-                </div>
+                </div> */}
             </Navbar.Collapse>
         </Container>
     </Navbar>
