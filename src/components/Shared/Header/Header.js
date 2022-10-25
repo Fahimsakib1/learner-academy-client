@@ -65,7 +65,6 @@ const Header = () => {
                     <NavLink to='/courses'>Courses</NavLink>
                     <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to='/faq'>FAQ</NavLink>
                     <NavLink to='/blog'>Blog</NavLink>
-                    <NavLink to='/register'>Register</NavLink>
                 
 
 
@@ -78,7 +77,7 @@ const Header = () => {
                                     <Link to='/profile'>
                                         {
                                             user?.photoURL ?
-                                                <Image className='' roundedCircle src={user?.photoURL} style={{ height: "40px" }} >
+                                                <Image title={user.displayName} className='' roundedCircle src={user?.photoURL} style={{ height: "40px" }} >
                                                 </Image>
                                                 :
                                                 <FaUserAlt className='fs-3 rounded-4 mt-1'></FaUserAlt>

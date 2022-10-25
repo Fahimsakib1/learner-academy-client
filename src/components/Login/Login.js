@@ -8,16 +8,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
     
-    const {userLogin} = useContext(AuthContext);
+    const {userLogin, googleLogin, githubLogin} = useContext(AuthContext);
 
     const [visible, setVisible] = useState(false);
     const passwordFieldType = visible ? "text" : "password";
     const [error, setError] = useState('');
     const [successLogin, setSuccessLogin] = useState(false);
+    const providerGoogle = new GoogleAuthProvider();
+    const providerGithub = new GithubAuthProvider();
 
 
     const handleLogin = (event) => {
@@ -41,6 +44,49 @@ const Login = () => {
                 text: 'Login Failed'
             })
             successLogin(false);
+        })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin(providerGoogle)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            Swal.fire(
+                'Great',
+                `Hello! ${user.email} By Google`,
+                'success'
+                )
+        })
+        .catch(error => {
+            console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Google Login Failed'
+            })
+        })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin(providerGithub)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            Swal.fire(
+                'Great',
+                `Hello! ${user.displayName} By Github`,
+                'success'
+                )
+        })
+        
+        .catch(error => {
+            console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Github Sign In Failed'
+            })
         })
     }
     
@@ -108,12 +154,16 @@ const Login = () => {
 
                 <div className='google-github-facebook-button-container text-center mt-3'>
                     <div className='google-button-container rounded-4 mb-3'>
-                        <button  className='google-button border border-0 btn btn-primary-google w-75'>Google Sign in <Link className='m-1 ms-3' title="Google" target="_blank" role="button"><FaGoogle className='fs-4 google-icon-form'></FaGoogle></Link>
+                        <button  
+                        onClick={handleGoogleLogin}
+                        className='google-button border border-0 btn btn-primary-google w-75'>Google Sign in <Link className='m-1 ms-3' title="Google" target="_blank" role="button"><FaGoogle className='fs-4 google-icon-form'></FaGoogle></Link>
                         </button>
                     </div>
 
                     <div className='github-button-container  rounded-4 mb-3 '>
-                        <button className='github-button border border-0 btn btn-primary-github w-75'>Github Sign in <Link className='m-1 ms-2' title="GitHub" target="_blank" role="button"><FaGithub className='fs-3 github-icon-form  fw-bold'></FaGithub></Link>
+                        <button 
+                        onClick={handleGithubLogin}
+                        className='github-button border border-0 btn btn-primary-github w-75'>Github Sign in <Link className='m-1 ms-2' title="GitHub" target="_blank" role="button"><FaGithub className='fs-3 github-icon-form  fw-bold'></FaGithub></Link>
                         </button>
                     </div>
 

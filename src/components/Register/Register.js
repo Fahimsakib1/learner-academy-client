@@ -8,7 +8,7 @@ import { faEye, faEyeSlash, faEnvelope, faUser } from '@fortawesome/free-solid-s
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin, FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../images/Login.jpg';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
@@ -16,7 +16,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
     
     const [success, setSuccess] = useState(false);
     const [visible, setVisible] = useState(false);
@@ -27,6 +27,7 @@ const Register = () => {
     const passwordFieldType = visible ? "text" : "password";
     const confirmPasswordFieldType = visible1 ? "text" : "password";
     const [alreadyExistUser, setAlreadyExistsUser] = useState('');
+    const navigate = useNavigate();
 
     const handleAccepted = (event) => {
         setAccepted(event.target.checked)
@@ -59,7 +60,7 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user);
+            console.log("user after successful registration", user);
             setPasswordError('');
             setSuccess(true);
             event.target.reset();
@@ -68,6 +69,8 @@ const Register = () => {
                 `${name} You are Successfully Registered`,
                 'success'
             )
+            handleUpdateUserProfile(name, photo);
+            navigate('/login')
         })
 
         .catch(error => {
@@ -80,6 +83,17 @@ const Register = () => {
                 text: 'Registration Failed'
             })
         })
+    }
+
+
+    const handleUpdateUserProfile = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photoURL : photo
+        }
+        updateUserProfile(profile)
+        .then(() => { })
+        .catch(error => console.error(error))
     }
 
 
