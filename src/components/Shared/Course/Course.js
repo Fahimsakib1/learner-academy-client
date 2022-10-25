@@ -1,19 +1,25 @@
 import React from 'react';
 import './Course.css';
 import { FaClock } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
 
 const Course = ({ course }) => {
     const { id, name, image, duration, about } = course;
+    const navigate = useNavigate();
 
+    const handleCardClick = () => {
+        navigate(`/courseDetails/${id}`)
+    }
+    
     return (
         <div>
             <div className="col">
-                <div className="card all-courses-card">
+                <div onClick={handleCardClick} className="card all-courses-card">
                     <img src={image} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className=''>About: <span className='text-muted course-about-para'>{about.slice(0, 100) + '...'}</span></p>
-                        <div className='d-flex align-items-center'>
+                        <h5 className="card-title text-primary fw-bold">{name}</h5>
+                        <p className=''><span className='text-dark fw-bold'>About:</span> <span className='text-muted course-about-para'>{about.slice(0, 100) + '...'}</span></p>
+                        <div className='d-flex align-items-center text-dark fw-bold'>
                             <FaClock></FaClock>
                             <p className="card-text ms-2">Duration: {duration}</p>
                         </div>
@@ -25,3 +31,5 @@ const Course = ({ course }) => {
 };
 
 export default Course;
+
+// to = {`/courseDetails/${id}`} className = 'course-card-link'

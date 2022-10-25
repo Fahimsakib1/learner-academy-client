@@ -38,7 +38,6 @@ const Courses = () => {
                             courses.map(course => <Course key={course.id} course={course}></Course>)
                         }
                     </div>
-
                 </div>
 
             </div>
