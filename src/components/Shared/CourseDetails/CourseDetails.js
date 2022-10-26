@@ -20,7 +20,7 @@ const CourseDetails = () => {
 
     return (
         <div>
-            <Card className='container mt-3 w-75 border border-0'>
+            <Card className='container mt-3 border border-0 course-details-card-container'>
 
                 <Card.Body className='border border-2 border-primary mt-3 course-card-body rounded-3'>
                     <div className=''>
@@ -70,7 +70,7 @@ const CourseDetails = () => {
                             
                         </div>
 
-                        <div className='mx-auto container w-75 mb-3'>
+                        <div className='mx-auto container mb-3'>
                             <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold'>
                                 <thead>
                                     <tr>

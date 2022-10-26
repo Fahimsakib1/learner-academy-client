@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
     return (
-        <div className='container mx-auto mt-5 w-75'>
+        <div className='container mx-auto mt-5 blog-parent-container'>
             <Card className='rounded-3 blog-card-parent mb-5'>
                 <Card.Header as="h4" className='text-center blog-title text-white rounded-2'>Question 1: What is <span className='text-primary'>Cors ?</span></Card.Header>
                 <Card.Body className='rounded-3'>

@@ -265,7 +265,7 @@ const Register = () => {
                     <div
                         className='google-button-container rounded-4 mb-3'>
                         <button 
-                         onClick={handleGoogleLogin}
+                        onClick={handleGoogleLogin}
                         className='google-button border border-0 btn btn-primary-google w-75'>Google Sign in <Link className='m-1 ms-3' title="Google" target="_blank" role="button"><FaGoogle className='fs-4 google-icon-form'></FaGoogle></Link></button>
                     </div>
 

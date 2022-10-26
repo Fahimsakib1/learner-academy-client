@@ -13,12 +13,15 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     
-    const {userLogin, googleLogin, githubLogin, setLoading} = useContext(AuthContext);
-
+    const {userLogin, googleLogin, githubLogin, setLoading, handlePasswordReset, user} = useContext(AuthContext);
+    console.log("user from login page", user)
     const [visible, setVisible] = useState(false);
     const passwordFieldType = visible ? "text" : "password";
     const [error, setError] = useState('');
     const [successLogin, setSuccessLogin] = useState(false);
+
+
+    const [email, setEmail] = useState('');
     
     const providerGoogle = new GoogleAuthProvider();
     const providerGithub = new GithubAuthProvider();
@@ -101,6 +104,36 @@ const Login = () => {
             })
         })
     }
+
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value)
+    }
+
+
+    const passwordChangeEmail = () => {
+    
+        handlePasswordReset(email)
+        .then(result => {
+            
+            setError('')
+            Swal.fire(
+                'Great',
+                `Password Reset Email has been been sent to ${email} .. Please Check...`,
+                'success'
+                )
+        })
+
+        .catch(error => {
+            console.error(error);
+            setError(error.message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password Reset Failed'
+            })
+        })
+    }
     
     
     
@@ -118,7 +151,7 @@ const Login = () => {
                         <div>
                             <input
 
-                                type="email" className="form-control" id="formGroupExampleInput" placeholder="Add Your Email" name="email" required />
+                                type="email" className="form-control" id="formGroupExampleInput" placeholder="Add Your Email" name="email" onChange={handleEmailChange} required />
                         </div>
 
                         <div className='envelope-icon-div'>
@@ -155,12 +188,16 @@ const Login = () => {
                         successLogin && <p className='login-successful-text-color'> Login Successful</p>
                     }
 
+                    {
+                        <p className='text-danger'>{error}</p>
+                    }
+
                 </form>
 
                 <div className='d-flex justify-content-between login-lower-container px-3'>
                     <p className='register-title-link me-2'>New to this website? <Link to='/register'> Register</Link></p>
                     <div className='d-flex justify-content-between reset-password-parent-div'>
-                        <p className='my-2'>Forget Password? <button type="button" className="btn btn-link reset-password-link-button">Reset Password</button></p>
+                        <p className='my-2'>Forget Password? <button onClick={passwordChangeEmail} type="button" className="btn btn-link reset-password-link-button">Reset Password</button></p>
                     </div>
                 </div>
 

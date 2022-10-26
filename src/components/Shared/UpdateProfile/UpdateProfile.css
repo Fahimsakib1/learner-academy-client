@@ -1,0 +1,36 @@
+.update-profile-container{
+    /* background-image: linear-gradient(to right,  rgb(121, 35, 35), rgb(29, 4, 79)); */
+    background-image: linear-gradient(to right, rgb(35, 2, 76), rgb(76, 52, 3));
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .update-profile-container{
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 999px){
+    .update-profile-container{
+        width: 75% !important;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 599px){
+    .update-profile-container{
+        width: 95% !important;
+    }
+}
+
+@media only screen and (max-width: 299px){
+    .update-profile-container{
+        width: 100% !important;
+        margin-left: 10px;
+        margin-bottom: 20px;
+
+    }
+}
+

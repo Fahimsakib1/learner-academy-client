@@ -9,6 +9,7 @@ import CheckOutPage from "../../components/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
+import UpdateProfile from "../../components/Shared/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -56,6 +57,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+
+            {
+                path: '/profile',
+                element: <UpdateProfile></UpdateProfile>
             }
 
         ]

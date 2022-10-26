@@ -39,9 +39,9 @@ const CheckOutPage = () => {
 
 
     return (
-        <div className='container w-75 mx-auto mt-5 checkout-bg rounded-3'>
+        <div className='container mx-auto mt-5 checkout-bg rounded-3 checkout-page-container'>
             <h3 className='text-center text-primary mb-4 mt-3 pt-3'>Checkout</h3>
-            
+
             <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold mt-3'>
                 <thead>
                     <tr>

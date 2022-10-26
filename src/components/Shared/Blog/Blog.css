@@ -1,24 +1,37 @@
-.blog-title{
+.blog-title {
     /* background-image: linear-gradient(to right,  rgb(67, 4, 4), rgb(44, 4, 124)); */
-    background-image: linear-gradient(to right,  rgb(43, 5, 90), rgb(149, 100, 3));
+    background-image: linear-gradient(to right, rgb(43, 5, 90), rgb(149, 100, 3));
 }
-.blog-card-parent{
+
+.blog-card-parent {
     box-shadow: 10px 10px 5px rgb(196, 193, 193);
 }
 
-.blog-button{
-    background-image: linear-gradient(to left,  rgb(43, 5, 90), rgb(149, 100, 3));
+.blog-button {
+    background-image: linear-gradient(to left, rgb(43, 5, 90), rgb(149, 100, 3));
 }
 
-@media only screen and (max-width: 350px){
-    .blog-button{
+@media only screen and (max-width: 350px) {
+    .blog-button {
         font-size: 10px;
     }
 }
 
-@media only screen and (min-width: 401px){
-    .blog-button{
+@media only screen and (min-width: 401px) {
+    .blog-button {
         font-size: 15px;
         font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .blog-parent-container {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .blog-parent-container {
+        width: 100% !important;
     }
 }
