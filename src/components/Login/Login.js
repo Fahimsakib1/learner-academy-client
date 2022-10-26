@@ -66,6 +66,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, { replace: true })
             Swal.fire(
                 'Great',
                 `Hello! ${user.email} By Google`,
@@ -88,6 +89,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, { replace: true })
             Swal.fire(
                 'Great',
                 `Hello! ${user.displayName} By Github`,

@@ -31,7 +31,8 @@ This is project is basically divided in two parts.
 - If a user is not login to the website thn the nav bar will show the register and login options. user can toggle between these two.
 - User can also update his profile by clicking on the phot in the nav bar. All these are done the firebase.
 - Register and Login form is created for the user to get registered and logged in.
-- If someone wants to visit a route which is not available in the website then an error message will be shown.    
+- If someone wants to visit a route which is not available in the website then an error message will be shown. 
+- I have also implemented dark and light mode on the whole website based on the toggling button.    
 
 ## Frameworks and Libraries used in this project
 ### React Router DOM: 
