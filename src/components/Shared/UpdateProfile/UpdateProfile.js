@@ -13,7 +13,7 @@ const UpdateProfile = () => {
     
     const [accepted, setAccepted] = useState(false);
     const { user, updateUserProfile, loading } = useContext(AuthContext)
-    const [name, setName] = useState(user.displayName);
+    const [name, setName] = useState('');
     const [photoURL, setPhotoURL] = useState(user.photoURL);
     const photoURLRef = useRef(user.photoURL);
     const [error, setError] = useState('')
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
                         className='fw-bold fs-5'
                         onChange={handleNameChange}
                         type="text"
-                        defaultValue={name}
+                        defaultValue={user?.displayName}
                         placeholder="Enter Name" />
                 </Form.Group>
 

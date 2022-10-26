@@ -10,6 +10,7 @@ const AuthProvider = ({children}) => {
     
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState("light");
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -49,6 +50,12 @@ const AuthProvider = ({children}) => {
 
 
 
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"))
+    }
+
+
+
 
     useEffect( () => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -67,7 +74,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
-    const AuthInfo = {user, loading, setLoading, setUser, createUser, userLogin, handleSignOut, googleLogin, githubLogin, updateUserProfile, handlePasswordReset};
+    const AuthInfo = {user, loading, setLoading, setUser, createUser, userLogin, handleSignOut, googleLogin, githubLogin, updateUserProfile, handlePasswordReset, theme, setTheme, toggleTheme};
     
     return (
         <AuthContext.Provider value = {AuthInfo}>

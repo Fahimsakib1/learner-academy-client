@@ -5,9 +5,6 @@ import './CheckOutPage.css';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
-import logo from '../../../images/logo/Logo-No-Bg.png';
-
-
 
 
 
@@ -28,7 +25,7 @@ const CheckOutPage = () => {
     const handleConfirmCheckout = () => {
         Swal.fire(
             'Great',
-            `Congratulations! You have successfully enrolled the course ${course_name}`,
+            `Congratulations! ${user?.displayName} You have successfully enrolled the course ${course_name}`,
             'success'
         )
         navigate('/courses');

@@ -9,11 +9,14 @@ import Swal from 'sweetalert2';
 import { FaUserAlt } from 'react-icons/fa';
 import Logo from '../../../images/logo/Logo.PNG'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import { FaToggleOn, FaToggleOff } from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
+import ReactSwitch from "react-switch";
 
 
 const Header = () => {
 
-    const { user, handleSignOut, githubLogin } = useContext(AuthContext);
+    const { user, handleSignOut, githubLogin, toggleTheme, theme, setTheme } = useContext(AuthContext);
     console.log("User From Header", user)
 
     const { displayName, photoURL } = githubLogin;
@@ -36,8 +39,9 @@ const Header = () => {
 
 
 
+
     return (
-        <Navbar collapseOnSelect expand="lg" className='pb-3 navbar-container' variant="dark" >
+        <Navbar collapseOnSelect expand="lg" className='pb-3 navbar-container' variant={theme === "light" ? "dark" : "light"} >
             <Container className='d-flex flex-md-column flex-lg-row flex-xl-row navbar-inner'>
 
                 <div className='d-flex justify-content-center align-items-center mt-1'>
@@ -77,7 +81,7 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <div className='d-flex align-items-center'>
-                                        <p className='me-1 mt-1 fs-6' style={{ color: "goldenrod" }}>Welcome, {user?.displayName}
+                                        <p className='me-1 mt-1 fs-6 user-name-header' style={{ color: "goldenrod" }}>Welcome, {user?.displayName}
                                         </p>
                                         <Link to='/profile'>
                                             {
@@ -89,17 +93,21 @@ const Header = () => {
                                             }
                                         </Link>
 
-                                        <Link to='/'><button onClick={userSignOut} className='btn btn-outline-danger '>Logout</button></Link>
+                                        <Link to='/'><button onClick={userSignOut} className='btn btn-danger '>Logout</button></Link>
 
                                     </div>
                                     :
                                     <>
                                         <Link className='me-2' to='/login'>Login</Link>
                                         <Link to='/register' className='me-2 mb-2'>Register</Link>
-                                        <Link to='/profile'><FaUserAlt className='fs-3 rounded-4 ms-2 text-white mt-1'></FaUserAlt></Link>
+                                        {/* <Link to='/profile'><FaUserAlt className='fs-3 rounded-4 ms-2 text-white mt-1'></FaUserAlt></Link> */}
                                     </>
                             }
                         </>
+
+                        <div className='mt-2'  title="Change Theme">
+                            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}></ReactSwitch>
+                        </div>
 
 
 

@@ -3,10 +3,14 @@ import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './Routes/Routes/Routes';
 import { ToastContainer } from 'react-toastify';
+import { useContext } from 'react';
+import { AuthContext } from './Contexts/AuthProvider/AuthProvider';
 
 function App() {
+  const {theme} = useContext(AuthContext)
+  
   return (
-    <div>
+    <div id={theme}>
       <RouterProvider router ={routes}></RouterProvider>
       <ToastContainer
           position="top-center"
