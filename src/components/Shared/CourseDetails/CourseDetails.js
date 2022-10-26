@@ -37,19 +37,19 @@ const CourseDetails = () => {
                     </div>
 
                     <div className='d-flex align-items-center'>
-                        <Card.Title className='me-2'>Enjoy {course_name} with {name}</Card.Title>
+                        <Card.Title className='me-2'>Learn {course_name} with {name}</Card.Title>
                         <Image
                             roundedCircle
                             src={instructor_img}
-                            style={{ height: "60px" }}
+                            style={{ height: "50px" }}
                         >
                         </Image>
                     </div>
                     <Card.Img variant="top" src={course_image} className='my-2 card-image-new rounded-3' />
 
                     <div>
-                        <div>
-                            <p className=''><span className='fw-bold'>Description:</span> <span className=''>{course_description}</span></p>
+                        <div className='mt-2'>
+                            <p className=''><span className='fw-bold'>Description:</span> <span style={{textAlign:"justify"}} className=''>{course_description}</span></p>
                         </div>
 
                         <div className='d-flex align-items-center justify-content-around mb-4 mt-2 flex-column flex-lg-row flex-md-row'>
@@ -106,7 +106,7 @@ const CourseDetails = () => {
 
                     <div className='text-center'>
                         <Link to={`/checkout/${course_id}`}>
-                            <Button className='ms-3 mt-2 fw-bold' variant="warning"><FaCrown className='me-2'></FaCrown>Get Premium Access</Button>
+                            <Button className='ms-3 mt-2 fw-bold premium-access-button' variant="warning"><FaCrown className='me-2'></FaCrown>Get Premium Access</Button>
                         </Link>
                     </div>
 

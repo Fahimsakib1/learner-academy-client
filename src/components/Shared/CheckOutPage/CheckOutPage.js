@@ -1,17 +1,23 @@
-import React from 'react';
-import { Button, Table } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Image, Table } from 'react-bootstrap';
 import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 import './CheckOutPage.css';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import logo from '../../../images/logo/Logo-No-Bg.png';
 
 
 
 
 
 const CheckOutPage = () => {
+
+    const { user } = useContext(AuthContext);
+    console.log("user from cehckout page", user)
+
     const navigate = useNavigate()
-    
+
     const checkOutCourse = useLoaderData();
     console.log(checkOutCourse);
 
@@ -34,8 +40,8 @@ const CheckOutPage = () => {
 
     return (
         <div className='container w-75 mx-auto mt-5 checkout-bg rounded-3'>
-            <h3 className='text-center text-primary mb-4 mt-3 pt-3'>Checkout Page</h3>
-
+            <h3 className='text-center text-primary mb-4 mt-3 pt-3'>Checkout</h3>
+            
             <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold mt-3'>
                 <thead>
                     <tr>
@@ -55,6 +61,30 @@ const CheckOutPage = () => {
 
                     <tr>
                         <td>Course Fee: {course_fee}</td>
+                    </tr>
+                </tbody>
+            </Table>
+
+
+            <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold mt-3'>
+                <thead>
+                    <tr>
+                        <th className='fs-5 text-success'>Student Information</th>
+                    </tr>
+                </thead>
+                <tbody className='fw-bold'>
+                    <tr>
+                        <td>Name: {user?.displayName}</td>
+                    </tr>
+                    <tr>
+                        <td>Email: {user?.email}</td>
+                    </tr>
+                    <tr>
+                        {/* <td>Photo: {user?.photoURL}</td> */}
+                        <td> Photo:
+                            <Image className='ms-2' roundedCircle src={user?.photoURL} style={{ height: "40px" }} >
+                            </Image>
+                        </td>
                     </tr>
                 </tbody>
             </Table>

@@ -9,7 +9,6 @@ import CheckOutPage from "../../components/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
-import ThemeMode from "../../components/Shared/ThemeMode/ThemeMode";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([

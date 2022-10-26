@@ -3,7 +3,9 @@
     margin-bottom: 5px;
 }
 .course-name-list{
-    background-color: rgb(12, 12, 12) !important;
+    /* background-image: linear-gradient(to right,  rgba(68, 2, 2, 0.888), rgb(34, 3, 97)); */
+    background-image: linear-gradient(to right,  rgb(2, 11, 75), rgb(123, 1, 1));
+    /* background-color: rgb(12, 12, 12) !important; */
     border-radius: 10px !important;
 }
 
@@ -22,7 +24,8 @@
 }
 
 .course-name-list:hover{
-    background-color: rgb(4, 4, 85) !important;
+    /* background-image: linear-gradient(to right,  rgb(2, 11, 75), rgb(142, 2, 2)); */
+    background-image: linear-gradient(to right,  rgba(68, 2, 2, 0.888), rgb(34, 3, 97));
     color: white !important;
     font-weight: bold;
 }

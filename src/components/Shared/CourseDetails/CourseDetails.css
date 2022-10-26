@@ -14,7 +14,13 @@
 }
 
 .duration-div, .students-div, .rating-div{
-    background-image: linear-gradient(to right,  rgb(148, 10, 10), rgb(51, 7, 139));
+    background-image: linear-gradient(to right,  rgb(115, 6, 6), rgb(39, 4, 108));
     color: white;
     box-shadow: 10px 10px 5px white;
+}
+
+.premium-access-button:hover{
+    background-color: rgb(218, 167, 40) !important;
+    color: black !;
+    
 }

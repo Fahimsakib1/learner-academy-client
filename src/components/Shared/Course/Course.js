@@ -18,7 +18,7 @@ const Course = ({ course }) => {
                     <img src={image} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title text-primary fw-bold">{name}</h5>
-                        <p className=''><span className='text-dark fw-bold'>About:</span> <span className='text-muted course-about-para'>{about.slice(0, 100) + '...'}</span></p>
+                        <p className=''><span className='text-dark fw-bold'>About:</span> <span className='text-muted course-about-para'>{about.slice(0, 120) + '...'}</span></p>
                         <div className='d-flex align-items-center text-dark fw-bold'>
                             <FaClock></FaClock>
                             <p className="card-text ms-2">Duration: {duration}</p>
@@ -31,5 +31,3 @@ const Course = ({ course }) => {
 };
 
 export default Course;
-
-// to = {`/courseDetails/${id}`} className = 'course-card-link'
