@@ -209,9 +209,10 @@ const FAQ = () => {
                                 toggle7 && (
                                     <div>
                                         <p className='py-2 fs-6'> <span className='text-primary fw-bold'>Answer: </span> Github Links are added below.</p>
-                                        <a><span>Github Link Client Side:</span> https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Fahimsakib1</a>
-                                        <br></br>
-                                        <a><span>Github Link Server Side:</span> https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Fahimsakib1</a>
+
+                                        <p><span>Github Link Client Side:</span> <span className='text-primary fw-bold'>https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Fahimsakib1</span></p>
+                                        
+                                        <p><span>Github Link Server Side:</span> <span className='text-primary fw-bold'>https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Fahimsakib1</span></p>
                                     </div>
 
                                 )

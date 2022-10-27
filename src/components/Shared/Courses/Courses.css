@@ -10,14 +10,14 @@
 }
 
 .offered-course-title{
-    box-shadow: 3px 3px 5px rgb(226, 224, 224);
+    box-shadow: 2px 2px 3px rgb(226, 224, 224);
     background-color: rgb(4, 4, 85);
     border-radius: 10px;
     color: white;
 }
 
 .course-title{
-    box-shadow: 5px 5px 5px rgb(226, 224, 224);
+    box-shadow: 3px 3px 3px rgb(226, 224, 224);
     background-image: linear-gradient(to right,  rgb(94, 4, 4), rgb(51, 7, 139));
     border-radius: 8px;
     color: white;

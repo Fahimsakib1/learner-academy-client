@@ -9,7 +9,7 @@ import Logo from '../../../images/logo/Logo.PNG'
 const Footer = () => {
     return (
         <div className='footer-parent-div'>
-            <footer className="  bg-dark text-center text-white  footer-section">
+            <footer className="text-center text-white  footer-section">
                 {/* <!-- Grid container --> */}
 
 
@@ -23,13 +23,13 @@ const Footer = () => {
                         <p className="text-muted">Dhaka, Bangladesh</p>
                         <p className="text-muted text-center footer-email">Email: learneracademy@gmail.com</p>
                         <p className="text-muted text-center forter-mobile">Mobile: 01122334455</p>
-                        <p>Privacy Policy || <a className="footer-terms-and-condition" href="/">Terms Of Use</a></p>
+                        <p>Privacy Policy || <a className="footer-terms-and-condition" href="/terms">Terms Of Use</a></p>
                     </div>
 
                     {/* <!-- Section: Social media --> */}
                     <section className="mb-4 ">
 
-                        <Link className='m-1 px-3 facebook-icon' title="Facebook" target="_blank" to="https://www.facebook.com/moebdgov" role="button"><FaFacebook className='fs-4 facebook-icon'></FaFacebook></Link>
+                        <Link className='m-1 px-3 facebook-icon' title="Facebook" target="_blank" to="https://www.youtube.com/watch?v=GtGmqVyBNVg" role="button"><FaFacebook className='fs-4 facebook-icon'></FaFacebook></Link>
 
                         <Link className='instagram-icon m-1 px-3' title="Instagram" target="_blank" to="https://www.facebook.com/moebdgov" role="button"><FaInstagram className='text-danger fs-4 instagram-icon'></FaInstagram></Link>
 

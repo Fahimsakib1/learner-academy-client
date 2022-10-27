@@ -8,7 +8,7 @@ import { faEye, faEyeSlash, faEnvelope, faUser } from '@fortawesome/free-solid-s
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../images/Login.jpg';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -28,7 +28,14 @@ const Register = () => {
     const passwordFieldType = visible ? "text" : "password";
     const confirmPasswordFieldType = visible1 ? "text" : "password";
     const [alreadyExistUser, setAlreadyExistsUser] = useState('');
+    
+    
+    
+    
+    
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const providerGoogle = new GoogleAuthProvider();
     const providerGithub = new GithubAuthProvider();
@@ -70,10 +77,11 @@ const Register = () => {
             event.target.reset();
             Swal.fire(
                 'Great',
-                `${name} You are Successfully Registered`,
+                `${name} You are Successfully Registered.. Please Login to Your Account`,
                 'success'
             )
             handleUpdateUserProfile(name, photo);
+            // navigate(from, { replace: true })
             navigate('/login')
         })
 
@@ -161,7 +169,7 @@ const Register = () => {
                 <Form onSubmit={handleSubmit}  className='only-form'>
 
                     <Form.Group className="mb-1" controlId="formBasicName">
-                        <Form.Label>FullName</Form.Label>
+                        <Form.Label>Full Name</Form.Label>
                         <div className='name-field-main-div'>
                             <div>
                                 <Form.Control

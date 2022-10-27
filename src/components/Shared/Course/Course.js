@@ -14,11 +14,11 @@ const Course = ({ course }) => {
     return (
         <div>
             <div className="col">
-                <div onClick={handleCardClick} className="card all-courses-card">
+                <div onClick={handleCardClick} className="card all-courses-card" title="click to view details">
                     <img src={image} className="card-img-top" alt="..." />
-                    <div className="card-body">
+                    <div className="card-body" >
                         <h5 className="card-title text-primary fw-bold">{name}</h5>
-                        <p className=''><span className='text-dark fw-bold'>About:</span> <span className='text-muted course-about-para'>{about.slice(0, 120) + '...'}</span></p>
+                        <p className=''><span className='text-dark fw-bold'>About:</span> <span className='course-about-para'>{about.slice(0, 130) + '...'}</span></p>
                         <div className='d-flex align-items-center text-dark fw-bold'>
                             <FaClock></FaClock>
                             <p className="card-text ms-2">Duration: {duration}</p>
