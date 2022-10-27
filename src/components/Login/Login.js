@@ -49,6 +49,7 @@ const Login = () => {
 
         .catch(error => {
             console.error(error)
+            setError(error.message);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -56,6 +57,7 @@ const Login = () => {
             })
             successLogin(false);
         })
+        
         .finally(() => setLoading(false))
     }
 
@@ -66,6 +68,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setError('')
+            setSuccessLogin(true);
             navigate(from, { replace: true })
             Swal.fire(
                 'Great',
@@ -75,6 +79,8 @@ const Login = () => {
         })
         .catch(error => {
             console.error(error);
+            setError(error.message);
+            setSuccessLogin(false);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -89,6 +95,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setError('');
+            setSuccessLogin(true);
             navigate(from, { replace: true })
             Swal.fire(
                 'Great',
@@ -99,11 +107,13 @@ const Login = () => {
 
         .catch(error => {
             console.error(error);
+            setError(error.message);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Github Sign In Failed'
             })
+            setSuccessLogin(false);
         })
     }
 
@@ -128,6 +138,7 @@ const Login = () => {
 
         .catch(error => {
             console.error(error);
+            setError(error.message);
             setError(error.message);
             Swal.fire({
                 icon: 'error',
@@ -191,7 +202,7 @@ const Login = () => {
                     }
 
                     {
-                        <p className='text-danger'>{error}</p>
+                        error && <p className='text-danger'>{error}</p>
                     }
 
                 </form>

@@ -74,7 +74,7 @@ const CheckOutPage = () => {
                         <td>Name: {user?.displayName}</td>
                     </tr>
                     <tr>
-                        <td>Email: {user?.email}</td>
+                        <td>Email: {user?.email ? user.email : "Email Not Added"}</td>
                     </tr>
                     <tr>
                         {/* <td>Photo: {user?.photoURL}</td> */}

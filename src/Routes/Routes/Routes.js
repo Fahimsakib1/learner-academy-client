@@ -8,6 +8,7 @@ import Blog from "../../components/Shared/Blog/Blog";
 import CheckOutPage from "../../components/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
+import FAQ from "../../components/Shared/FAQ/FAQ";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
 import UpdateProfile from "../../components/Shared/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -62,6 +63,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <UpdateProfile></UpdateProfile>
+            },
+
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
             }
 
         ]

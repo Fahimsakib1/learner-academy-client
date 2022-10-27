@@ -51,7 +51,7 @@ const AuthProvider = ({children}) => {
 
 
     const toggleTheme = () => {
-        setTheme((curr) => (curr === "light" ? "dark" : "light"))
+        setTheme((current) => (current === "light" ? "dark" : "light"))
     }
 
 

@@ -105,7 +105,7 @@ const Header = () => {
                             }
                         </>
 
-                        <div className='mt-2'  title="Change Theme">
+                        <div className='mt-2'  title={theme === "dark" ? "Press For Light Mode" : "Press For Dark Mode"}>
                             <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}></ReactSwitch>
                         </div>
 

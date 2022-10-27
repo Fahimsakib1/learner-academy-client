@@ -7,7 +7,6 @@ import { FaEye, } from "react-icons/fa";
 import { FaClock, FaUserAlt, FaStar, FaArrowDown, FaCrown } from "react-icons/fa";
 import './CourseDetails.css';
 import Table from 'react-bootstrap/Table';
-import jsPDF from 'jspdf';
 import ReactPrint from 'react-to-print';
 import { useRef } from 'react';
 
@@ -23,19 +22,9 @@ const CourseDetails = () => {
 
     const ref = useRef();
 
-
-    // const generatePDF = () => {
-    //     let doc = new jsPDF("p", "pt", "a4");
-    //     doc.html(document.getElementById('content-for-pdf'), {
-    //         callback: function (pdf) {
-    //             pdf.save('myProject.pdf');
-    //         }
-    //     });
-    // };
-
     return (
         <div>
-            <Card id='content-for-pdf' className='container mt-3 border border-0 course-details-card-container'>
+            <Card className='container mt-3 border border-0 course-details-card-container'>
 
                 <Card.Body  className='border border-2 border-primary mt-3 course-card-body rounded-3'>
                     <div className=''>
@@ -54,14 +43,6 @@ const CourseDetails = () => {
                         </Card.Header>
 
                     </div>
-
-
-                    {/* <ReactPrint trigger={() => <button className='mt-3'>Generate PDF</button>} content={() => ref.current} /> */}
-
-
-
-
-
 
 
                     <div ref={ref} className='px-2'>

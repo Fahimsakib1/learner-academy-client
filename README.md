@@ -1,5 +1,5 @@
 # Learner Academy
-Learner Academy is a online platform which provide different courses related to computer science and programming languages. There are some courses added in this project. A user can easily select a course based on his interest and can get the premium access also if he logged in. There are many other features also which is described below.
+Learner Academy is a online platform which provides different courses related to computer science and programming languages. There are some courses added in this project. A user can easily select a course based on his interest and can get the premium access also if he logged in. There are many other features also which is described below.
 
 This website is made by using React Router DOM, Firebase authentication is the major part of this project. Besides React Bootstrap is used for the styling purpose. Custom css is used where necessary. React toastify and sweet alert is added to show the alerts for better user experience.
 
@@ -14,7 +14,7 @@ This is project is basically divided in two parts.
 - As this project is about online course providing for the students, I needed much data regarding the courses and course details. Fo that I have used node.js and express.js for the server purpose. I have created many data according to the courses and all the data are fetch from the client side. there is no static data in this project.
 
 ## Project Features
-- This provide a user many courses regarding to computer science and programming language.
+- This project provides a user many courses regarding to computer science and programming language.
 - There is a home page which is changing the background images after a specific period of time.
 - In the courses page there are listed all the courses that is available right now.
 - when a user clicked on a course link (left side of the page) of the course card then the user will be directed to a course details route which he has chosen.
@@ -32,7 +32,8 @@ This is project is basically divided in two parts.
 - User can also update his profile by clicking on the phot in the nav bar. All these are done the firebase.
 - Register and Login form is created for the user to get registered and logged in.
 - If someone wants to visit a route which is not available in the website then an error message will be shown. 
-- I have also implemented dark and light mode on the whole website based on the toggling button.    
+- I have also implemented dark and light mode on the whole website based on the toggling button. 
+- PDF generator is added so that, user can print the course details he has applied for.   
 
 ## Frameworks and Libraries used in this project
 ### React Router DOM: 

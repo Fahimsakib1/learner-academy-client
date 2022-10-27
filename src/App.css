@@ -55,7 +55,8 @@
 }
 
 #dark .header-links a {
-  color: rgb(6, 6, 6);
+  /* color: rgb(6, 6, 6); */
+  color: rgb(57, 78, 200);
   font-weight: 600;
 }
 
@@ -64,7 +65,8 @@
 }
 
 #dark .header-links a:hover{
-  color: rgb(57, 78, 200);
+  /* color: rgb(57, 78, 200); */
+  color: rgb(21, 20, 21);
 }
 
 
@@ -75,7 +77,8 @@
 }
 
 #dark .user-name-header{
-  color: rgb(229, 53, 53) !important;
+  /* color: rgb(229, 53, 53) !important; */
+  color: rgb(57, 78, 200) !important;
   font-weight: 600;
 }
 
