@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -9,6 +9,7 @@ import './CourseDetails.css';
 import Table from 'react-bootstrap/Table';
 import ReactPrint from 'react-to-print';
 import { useRef } from 'react';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 
 
@@ -21,6 +22,11 @@ const CourseDetails = () => {
     console.log(course);
 
     const ref = useRef();
+
+    const{theme, setTheme, toggleTheme} = useContext(AuthContext);
+
+
+
 
     return (
         <div>
@@ -82,7 +88,7 @@ const CourseDetails = () => {
                             </div>
 
                             <div className='mx-auto container mb-3'>
-                                <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold'>
+                                <Table striped bordered hover variant={theme === 'light' ? "light" : "dark"} className='text-center border border-1'>
                                     <thead>
                                         <tr>
                                             <th className='fs-5 text-primary'>Course Specialty</th>

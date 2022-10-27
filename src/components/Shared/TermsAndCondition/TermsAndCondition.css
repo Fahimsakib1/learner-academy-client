@@ -1,0 +1,15 @@
+.terms-title{
+    background-image: linear-gradient(to right,  rgb(2, 11, 75), rgb(123, 1, 1));
+}
+
+@media only screen and (min-width: 750px) {
+    .terms-condition-card-parent {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .terms-condition-card-parent {
+        width: 95%;
+    }
+}

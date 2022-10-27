@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import './Home.css'
 
 const Home = () => {
-    const handleClick = () => {
-        console.log("Button CLicked");
-    }
 
     return (
         <div className='main-div'>
@@ -18,7 +15,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='home-page-button-div'>
                     <Link to='/register'><Button className='fs-5 start-page-register-button' type='button'>Register</Button></Link>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import FAQ from "../../components/Shared/FAQ/FAQ";
 import LeftSideNav from "../../components/Shared/LeftSideNav/LeftSideNav";
+import TermsAndCondition from "../../components/Shared/TermsAndCondition/TermsAndCondition";
 import UpdateProfile from "../../components/Shared/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -68,6 +69,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FAQ></FAQ>
+            },
+
+            {
+                path: '/terms',
+                element: <TermsAndCondition></TermsAndCondition>
             }
 
         ]

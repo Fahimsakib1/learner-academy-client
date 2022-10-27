@@ -90,6 +90,39 @@
   border: 2px solid rgb(20, 3, 120);
 }
 
+#dark .faq-card{
+  background-color: rgb(182, 180, 179);
+}
+
+#dark .faq-title{
+  background-image: linear-gradient(to right,  rgb(139, 5, 5), rgb(40, 9, 167));
+}
+
+#dark .terms-card-body{
+  background-color: rgb(182, 180, 179);
+}
+
+#dark .blog-card-parent{
+  background-color: rgb(182, 180, 179);
+}
+
+#dark .course-details-card-container{
+  background-color: rgb(182, 180, 179);
+}
+
+#dark .duration-div{
+  box-shadow: 3px 3px 3px rgb(68, 82, 230);
+}
+#dark .students-div{
+  box-shadow: 3px 3px 3px rgb(68, 82, 230);
+}
+
+#dark .rating-div{
+  box-shadow: 3px 3px 3px rgb(68, 82, 230);
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

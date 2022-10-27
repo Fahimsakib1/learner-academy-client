@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './FAQ.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const FAQ = () => {
 
+    const{theme, setTheme, toggleTheme} = useContext(AuthContext);
+    
     const [toggle1, setToggle1] = useState(false);
     const [toggle2, setToggle2] = useState(false);
     const [toggle3, setToggle3] = useState(false);
@@ -51,7 +54,7 @@ const FAQ = () => {
 
             <div className=''>
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 1: What is This Project About?</Card.Title>
@@ -65,17 +68,17 @@ const FAQ = () => {
                         {
                             toggle1 ?
 
-                                <Button onClick={handleAnswer1} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer1} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer1} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer1} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 2: What are the things that used in this Project?</Card.Title>
@@ -89,17 +92,17 @@ const FAQ = () => {
                         {
                             toggle2 ?
 
-                                <Button onClick={handleAnswer2} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer2} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer2} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer2} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 3: Features of the Project?</Card.Title>
@@ -113,17 +116,17 @@ const FAQ = () => {
                         {
                             toggle3 ?
 
-                                <Button onClick={handleAnswer3} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer3} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer3} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer3} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 4: Is there any server side in this project?</Card.Title>
@@ -138,17 +141,17 @@ const FAQ = () => {
                         {
                             toggle4 ?
 
-                                <Button onClick={handleAnswer4} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer4} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer4} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer4} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 5: If I want to make this type of project what things should I have to keep in my mind?</Card.Title>
@@ -162,18 +165,18 @@ const FAQ = () => {
                         {
                             toggle5 ?
 
-                                <Button onClick={handleAnswer5} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer5} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer5} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer5} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 6: Can we expect more courses in future?</Card.Title>
@@ -187,17 +190,17 @@ const FAQ = () => {
                         {
                             toggle6 ?
 
-                                <Button onClick={handleAnswer6} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer6} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer6} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer6} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
 
 
-                <Card className='mb-4'>
+                <Card className='mb-4 faq-card'>
                     <Card.Header className='faq-title' as="h5"></Card.Header>
                     <Card.Body>
                         <Card.Title>Question 7: Can we get the github links of the project?</Card.Title>
@@ -217,11 +220,11 @@ const FAQ = () => {
                         {
                             toggle7 ?
 
-                                <Button onClick={handleAnswer7} variant="outline-primary">Hide Answer</Button>
+                                <Button onClick={handleAnswer7} variant={theme === 'dark' ? "primary" : "outline-primary"}>Hide Answer</Button>
 
                                 :
 
-                                <Button onClick={handleAnswer7} variant="outline-primary">Show Answer</Button>
+                                <Button onClick={handleAnswer7} variant={theme === 'dark' ? "primary" : "outline-primary"}>Show Answer</Button>
                         }
                     </Card.Body>
                 </Card>
