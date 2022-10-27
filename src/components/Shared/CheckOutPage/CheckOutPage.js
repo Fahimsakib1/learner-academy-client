@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const CheckOutPage = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, theme } = useContext(AuthContext);
     console.log("user from cehckout page", user)
 
     const navigate = useNavigate()
@@ -39,7 +39,7 @@ const CheckOutPage = () => {
         <div className='container mx-auto mt-5 checkout-bg rounded-3 checkout-page-container'>
             <h3 className='text-center text-primary mb-4 mt-3 pt-3'>Checkout</h3>
 
-            <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold mt-3'>
+            <Table striped bordered hover variant={theme === 'light' ? 'light' : 'dark'} className='text-center border border-1 fw-bold mt-3'>
                 <thead>
                     <tr>
                         <th className='fs-5 text-success'>Course Details</th>
@@ -63,7 +63,7 @@ const CheckOutPage = () => {
             </Table>
 
 
-            <Table striped bordered hover variant="light" className='text-center border border-1 fw-bold mt-3'>
+            <Table striped bordered hover variant={theme === 'light' ? 'light' : 'dark'} className='text-center border border-1 fw-bold mt-3'>
                 <thead>
                     <tr>
                         <th className='fs-5 text-success'>Student Information</th>

@@ -1,5 +1,5 @@
 .login-container{
-    background-image: linear-gradient(to right,  rgb(38, 33, 33), rgb(29, 4, 79));
+    background-image: linear-gradient(to right,  rgb(44, 40, 40), rgb(29, 4, 79));
     color: white;
     padding: 10px 30px;
     border-radius: 20px;
@@ -76,9 +76,6 @@
         width: 60% !important;
     }
 }
-
-
-
 
 @media only screen and (max-width: 700px) {
     .login-container{

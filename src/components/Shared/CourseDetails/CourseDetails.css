@@ -30,10 +30,19 @@
     .course-details-card-container {
         width: 75% !important;
     }
+
+    .course-details-parent-div{
+        width: 75% !important;
+    }
+        
+    
 }
 
 @media only screen and (max-width: 749px) {
     .course-details-card-container {
+        width: 97% !important;
+    }
+    .course-details-parent-div{
         width: 97% !important;
     }
 }

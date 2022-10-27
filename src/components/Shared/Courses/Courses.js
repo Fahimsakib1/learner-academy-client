@@ -32,7 +32,7 @@ const Courses = () => {
                 </div>
 
                 <div className='col-lg-8 col-md-12 col-sm-12'>
-                    <h5 className='mt-3 course-title py-3 text-center'> All Courses</h5>
+                    <h5 className='mt-3 course-title py-3 text-center'> Computer Science All Courses</h5>
                     <div className='row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4 mx-auto mt-2 mb-3'>
                         {
                             courses.map(course => <Course key={course.id} course={course}></Course>)

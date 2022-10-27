@@ -29,8 +29,8 @@ const CourseDetails = () => {
 
 
     return (
-        <div>
-            <Card className='container mt-3 border border-0 course-details-card-container'>
+        <div className=' mx-auto course-details-parent-div'>
+            <Card className=' container mt-3 border border-0 course-details-card-container'>
 
                 <Card.Body  className='border border-2 border-primary mt-3 course-card-body rounded-3'>
                     <div className=''>

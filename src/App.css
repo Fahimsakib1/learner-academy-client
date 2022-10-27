@@ -32,7 +32,7 @@
   background-color: aliceblue;
 }
 #dark{
-  background-color: rgb(2, 0, 5);
+  background-color: rgb(14, 13, 13);
 }
 
 #light .all-courses-card{
@@ -51,28 +51,28 @@
 }
 
 #dark .navbar-container{
-  background-image: linear-gradient(to right,  white, white);
+  background-image: linear-gradient(to right,  rgba(44, 51, 63, 1), rgb(45, 54, 66));
 }
 
 #dark .header-links a {
   /* color: rgb(6, 6, 6); */
-  color: rgb(57, 78, 200);
+  color: white;
   font-weight: 600;
 }
 
 #dark .website-title{
-  color: rgb(5, 3, 92);
+  color: white;
 }
 
 #dark .header-links a:hover{
-  /* color: rgb(57, 78, 200); */
-  color: rgb(21, 20, 21);
+  /* color: rgb(192, 24, 161); */
+  color: goldenrod;
 }
 
 
 #dark .active{
-  border-bottom: 3px solid rgb(17, 3, 108);
-  color: rgb(237, 27, 27) !important;
+  border-bottom: 3px solid rgb(92, 137, 7);
+  color: white;
   border-radius: 10px;
 }
 
@@ -121,6 +121,25 @@
   box-shadow: 3px 3px 3px rgb(68, 82, 230);
 }
 
+#dark .registration-form-parent-div{
+  background-image: linear-gradient(to right,  rgb(87, 4, 4), rgb(29, 4, 80));
+}
+
+#dark .login-container{
+  background-image: linear-gradient(to right,  rgb(80, 4, 4), rgb(26, 3, 72));
+}
+
+#dark .btn-primary-google{
+  background-color: rgb(160, 142, 8) !important;
+}
+
+#dark .btn-primary-github{
+  background-color: black !important;
+}
+
+#dark .github-icon-form{
+  color: white !important;
+}
 
 
 @keyframes App-logo-spin {
