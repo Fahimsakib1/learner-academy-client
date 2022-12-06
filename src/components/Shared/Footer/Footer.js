@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSadCry } from '@fortawesome/free-solid-svg-icons';
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import Logo from '../../../images/logo/Logo.PNG'
+import Logo from '../../../images/logo/Logo.PNG' 
 
 const Footer = () => {
     return (

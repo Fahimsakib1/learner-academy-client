@@ -14,7 +14,7 @@ import TermsAndCondition from "../../components/Shared/TermsAndCondition/TermsAn
 import UpdateProfile from "../../components/Shared/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
-export const routes = createBrowserRouter([
+export const routes = createBrowserRouter([ 
     {
         path: '/',
         element: <Layout></Layout>,
