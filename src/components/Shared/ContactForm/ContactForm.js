@@ -5,14 +5,14 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import './ContactForm.css'
 
 
 
 
 const ContactForm = () => {
     return (
-        <div className='w-75 mx-auto mt-5 border border-2 p-4'>
+        <div className='w-75 mx-auto mt-5 border border-2 p-4 contact-form-main-div'>
             <Form
                 action='https://formspree.io/f/xzbwnkow'
                 method='POST'
