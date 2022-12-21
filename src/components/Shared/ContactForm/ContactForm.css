@@ -1,6 +1,19 @@
 
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 750px) {
     .contact-form-main-div {
         width: 98% !important;
     }
 }
+
+@media only screen and (min-width: 751px) and  (max-width: 1200px){
+    .contact-form-main-div {
+        width: 85% !important;
+    }
+}
+
+@media only screen and (min-width: 1201px)  {
+    .contact-form-main-div {
+        width: 65% !important;
+    }
+}
+

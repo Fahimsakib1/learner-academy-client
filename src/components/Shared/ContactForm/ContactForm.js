@@ -12,11 +12,11 @@ import './ContactForm.css'
 
 const ContactForm = () => {
     return (
-        <div className='w-75 mx-auto mt-5 border border-2 p-4 contact-form-main-div'>
+        <div className='mx-auto mt-5 border border-2 p-4 contact-form-main-div'>
             <Form
                 action='https://formspree.io/f/xzbwnkow'
                 method='POST'
-                className=''>
+                className=' mx-auto'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name</Form.Label>
