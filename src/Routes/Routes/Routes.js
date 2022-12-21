@@ -6,6 +6,7 @@ import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import Blog from "../../components/Shared/Blog/Blog";
 import CheckOutPage from "../../components/Shared/CheckOutPage/CheckOutPage";
+import ContactForm from "../../components/Shared/ContactForm/ContactForm";
 import CourseDetails from "../../components/Shared/CourseDetails/CourseDetails";
 import Courses from "../../components/Shared/Courses/Courses";
 import FAQ from "../../components/Shared/FAQ/FAQ";
@@ -74,6 +75,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/terms',
                 element: <TermsAndCondition></TermsAndCondition>
+            },
+
+            {
+                path:'/contact',
+                element: <ContactForm></ContactForm>
             }
 
         ]
